@@ -23,7 +23,7 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      <IsPublishable>False</IsPublishable>
+      <IsPublishable>True</IsPublishable>
       <PlatformTarget>x64</PlatformTarget>
       <DefineConstants>TRACE;CRACK</DefineConstants>
     </PropertyGroup>
