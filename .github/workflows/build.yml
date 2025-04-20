@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Package
-        path: ./
+        path: MaiChartManager\bin\x64\Debug\net8.0-windows10.0.17763.0\win-x64
