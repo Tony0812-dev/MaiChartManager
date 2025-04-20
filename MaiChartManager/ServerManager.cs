@@ -157,7 +157,6 @@ public static class ServerManager
             builder.Services.AddAuthorization();
         }
 
-# if !DEBUG
         builder.WebHost.ConfigureKestrel((context, serverOptions) =>
         {
             serverOptions.Listen(IPAddress.Loopback, 0);
@@ -172,7 +171,6 @@ public static class ServerManager
                 });
             }
         });
-# endif
 
         app = builder.Build();
         if (StaticSettings.Config.UseAuth)
