@@ -16,9 +16,6 @@ public partial class Launcher : Form
     {
         InitializeComponent();
         label3.Text = $@"v{Application.ProductVersion}";
-# if CRACK
-        label3.Text += " 此版本不可流通";
-# endif
         checkBox1.Checked = StaticSettings.Config.Export;
         textBox1.Text = StaticSettings.Config.GamePath;
         checkBoxLanAuth.Checked = StaticSettings.Config.UseAuth;
@@ -26,7 +23,7 @@ public partial class Launcher : Form
         textBoxLanAuthPass.Text = StaticSettings.Config.AuthPassword;
         textBox1.Items.AddRange(StaticSettings.Config.HistoryPath.ToArray());
         CheckStartupStatus();
-# if DEBUG
+# if !DEBUG
         checkBox1.Checked = true;
         StaticSettings.Config.Export = true;
         textBox1.Text = @"F:\Package";
@@ -147,7 +144,7 @@ public partial class Launcher : Form
             checkBox_startup_Click(null, null);
         }
 
-# if !DEBUG
+# if DEBUG
         StaticSettings.Config.GamePath = textBox1.Text;
         StaticSettings.Config.HistoryPath.Add(textBox1.Text);
         StaticSettings.Config.UseAuth = checkBoxLanAuth.Checked;
